@@ -1,19 +1,4 @@
----
 
-[db-servers]
+[db-server]
 192.168.33.20 
-
-[db-servers:vars]
-dbuser=John
-dbname=db1
-dbpassword=mypassword
-#privileges="CREATEDB,SUPERUSER"
-role_attr="CREATEDB,SUPERUSER"
-
-[db_setup]
-pg_version=10
-pg_contrib_version=9.3
-pg_encoding='UTF-8'
-pg_locale='en_US.UTF-8'
-pg_recreate_cluster=false
-
+#34.222.55.11

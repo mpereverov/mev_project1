@@ -1,0 +1,50 @@
+---
+
+- name: Add an PostgreSQL signing key
+  apt_key:
+    url: "{{ postgres_key_url }}"
+    state: present
+
+- name: Add PostgreSQL repository
+  apt_repository:
+    repo: "{{ db_repo }}"
+    state: present
+    filename: postgres
+
+- name: Update repositories cache
+  apt:
+    update_cache: yes
+
+- name: PostgreSQL install
+  apt: pkg={{ item }}
+  with_items:
+  - postgresql-{{ pg_version }}
+  - postgresql-client-{{ pg_version }}
+  - postgresql-contrib-{{ pg_contrib_version }}
+  - libpq-dev
+  - python-psycopg2
+  register: db_setup
+  # update_cache: yes
+
+- name: Ensure Postgresql server is started
+  service: 
+    name: postgresql 
+    state: started 
+    enabled: yes 
+    arguments: "{{ pg_version }}"
+    pattern: "/{{ pg_version }}/.*/postgres"
+
+- name: Create a Postgresql database
+  postgresql_db:
+    name: "{{ dbname }}"
+  become_user: postgres
+  
+- name: Create Postgresql user, and grant access to database
+  postgresql_user:
+    db: "{{ dbname }}"
+    name: "{{ dbuser }}"
+    password: "{{ dbpassword }}"
+    encrypted: yes
+    role_attr_flags: "{{ role_attr }}"
+#      priv: "{{ privileges }}"
+  become_user: postgres

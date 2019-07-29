@@ -1,0 +1,19 @@
+---
+
+- name: apply common configuration. Add user, homedir...
+  hosts: db-server
+
+  roles: 
+    - common
+
+- name: deploy PostgreSQL and configure a database
+  hosts: db-server
+
+  roles: 
+    - db
+
+- name: deploy Docker and run a container
+  hosts: db-server
+
+  roles: 
+    - docker
