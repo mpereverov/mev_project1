@@ -27,7 +27,7 @@
     - curl
     - gnupg-agent
     - software-properties-common
-    - gnupg-curl
+    # - gnupg-curl
     - libseccomp2
 
 
