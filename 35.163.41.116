@@ -879,32 +879,31 @@
             "Cmd": null, 
             "Domainname": "", 
             "Entrypoint": [
-                "/bin/tini", 
+                "/sbin/tini", 
                 "--", 
                 "/usr/local/bin/jenkins.sh"
             ], 
             "Env": [
-                "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin", 
+                "PATH=/usr/local/openjdk-8/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin", 
                 "LANG=C.UTF-8", 
-                "JAVA_HOME=/docker-java-home", 
-                "JAVA_VERSION=8u171", 
-                "JAVA_DEBIAN_VERSION=8u171-b11-1~deb9u1", 
-                "CA_CERTIFICATES_JAVA_VERSION=20170531+nmu1", 
+                "JAVA_HOME=/usr/local/openjdk-8", 
+                "JAVA_VERSION=8u222", 
+                "JAVA_BASE_URL=https://github.com/AdoptOpenJDK/openjdk8-upstream-binaries/releases/download/jdk8u222-b10/OpenJDK8U-jdk_", 
+                "JAVA_URL_VERSION=8u222b10", 
                 "JENKINS_HOME=/var/jenkins_home", 
                 "JENKINS_SLAVE_AGENT_PORT=50000", 
-                "TINI_VERSION=0.14.0", 
-                "TINI_SHA=6c41ec7d33e857d4779f14d9c74924cab0c7973485d2972419a3b7c7620ff5fd", 
-                "JENKINS_VERSION=2.60.3", 
+                "JENKINS_VERSION=2.187", 
                 "JENKINS_UC=https://updates.jenkins.io", 
                 "JENKINS_UC_EXPERIMENTAL=https://updates.jenkins.io/experimental", 
+                "JENKINS_INCREMENTALS_REPO_MIRROR=https://repo.jenkins-ci.org/incrementals", 
                 "COPY_REFERENCE_FILE_LOG=/var/jenkins_home/copy_reference_file.log"
             ], 
             "ExposedPorts": {
                 "50000/tcp": {}, 
                 "8080/tcp": {}
             }, 
-            "Hostname": "bff53803bea1", 
-            "Image": "jenkins:latest", 
+            "Hostname": "65ec3c7c7fb2", 
+            "Image": "jenkins/jenkins", 
             "Labels": {}, 
             "OnBuild": null, 
             "OpenStdin": false, 
@@ -916,22 +915,22 @@
             }, 
             "WorkingDir": ""
         }, 
-        "Created": "2019-08-02T11:49:34.643923108Z", 
+        "Created": "2019-08-02T21:33:29.283001964Z", 
         "Driver": "overlay2", 
         "ExecIDs": null, 
         "GraphDriver": {
             "Data": {
-                "LowerDir": "/var/lib/docker/overlay2/53518568ceffaf2f894bb844f33abc836832dc55745488df783dc042e317a2aa-init/diff:/var/lib/docker/overlay2/f51210b8901038545b3b1aff48a6f85c7a069f324d4bd020e504c6d9c9d69a86/diff:/var/lib/docker/overlay2/4ea0240f2f80278bc153531702825dff8c6aa03446e60d66cebbf67d2726de49/diff:/var/lib/docker/overlay2/164a5d3aae7d02b8fac2bd25f5c3f1e8f5886376a434494aefa5e549f48ab63f/diff:/var/lib/docker/overlay2/8eee7034ff65d1b0a618311ca2ee1bda85a2e799a6e3f417bf85c3888bf9193b/diff:/var/lib/docker/overlay2/0e2411b0b3a952f2d2fadb9ccacbf8dc2e3d9598008a183bec5df1d6b10ed0ca/diff:/var/lib/docker/overlay2/e66668d6ff89947a8a21c24d8e5b67e6736ee46461094a65fae88f79eb97b54e/diff:/var/lib/docker/overlay2/ef5bfafc31589803e595c9ad2a093975590ca9061128f5b8711aa9cc18c668b6/diff:/var/lib/docker/overlay2/54b1d9aa1a50c57340f32f57240de9435dddaa68ded398e4fb0522a2e1b0a402/diff:/var/lib/docker/overlay2/9d5a97dea0fc04f1c8b2269ff9b3f38043b481420a7eec21a1e8b8935502c76f/diff:/var/lib/docker/overlay2/ef8476b02b95db220836c020a2b4fb140fd9c61ae4dc1555e57eac481ef240ae/diff:/var/lib/docker/overlay2/c7f456aef3deec1cdf8bfefd96df066b4a5c7f78ee3837258bfb1bd1a765aeca/diff:/var/lib/docker/overlay2/6a49562111ab2129bde650e86633e793a6e7b3781d886b2a08f986f44556d9c4/diff:/var/lib/docker/overlay2/2879e809b1cf4f2923763568291652fa584cb18afe876adc2718b4a7ee881958/diff:/var/lib/docker/overlay2/18f565a408f4f8c63997cff73efb061afafee25b430ddba71f74175329a17084/diff:/var/lib/docker/overlay2/bb553e0eb0464aa5acda550df99f4c0b9d52fb9f5b9e9615117e835d0c9aecfb/diff:/var/lib/docker/overlay2/1c5e27505e4a8f57db910274297d99ef9327db6ded364eb144db5ad5a06cee9d/diff:/var/lib/docker/overlay2/92467077c2639658aa41a593c52e99ce09a0477d01a451dee9772aa41bcae91f/diff:/var/lib/docker/overlay2/fa1e3688867ebbf3d167e58023a5e2dd9359d57c0808afa0d8a70c2648fffe16/diff:/var/lib/docker/overlay2/a8101feeb1f6ed63e56ae1e1f530557acff490f22c8b22ca9815ed2fc8d7d50a/diff:/var/lib/docker/overlay2/2c98e06e0655468995cb75ef17bb49ce3d8d6d979056c1eccdb2f8da4aaa3716/diff", 
-                "MergedDir": "/var/lib/docker/overlay2/53518568ceffaf2f894bb844f33abc836832dc55745488df783dc042e317a2aa/merged", 
-                "UpperDir": "/var/lib/docker/overlay2/53518568ceffaf2f894bb844f33abc836832dc55745488df783dc042e317a2aa/diff", 
-                "WorkDir": "/var/lib/docker/overlay2/53518568ceffaf2f894bb844f33abc836832dc55745488df783dc042e317a2aa/work"
+                "LowerDir": "/var/lib/docker/overlay2/fe8a46aa170b5187594c64f0b47fe27a674c737178855b634173ad1fcd62a21a-init/diff:/var/lib/docker/overlay2/e9d42f43db89787e6fe78e4c69f047025994e7edbd69205c146b59488c5a6f7b/diff:/var/lib/docker/overlay2/f958ee574bfff7bc2ec7afe3dde87f01e9849cde56656080473695afc2b6d4d4/diff:/var/lib/docker/overlay2/adc2cc593baf0a53080a0f8b1b647c566f8a958e0fd4e8d7997ad2e017c7107c/diff:/var/lib/docker/overlay2/59bb8298a473aa8a37895b7361bce2e596e387f014af2e7b47397a7b6e180d68/diff:/var/lib/docker/overlay2/b70ffa493e7c20183c694b7ec4765dc2d45b0af93bce0f39ee259d89ea3e902e/diff:/var/lib/docker/overlay2/c316ef12d2290f464c1ccb98a9544436030e3363d55bbb4204fbf8a5844e8724/diff:/var/lib/docker/overlay2/9411c97e55b996f5ed3cbe6df368dee7c29ea198fc081a7723ef569cd79af9e8/diff:/var/lib/docker/overlay2/ede639d96bc62ff7670fb33a53c05088548e5504632996dcfd89c987df2b74a9/diff:/var/lib/docker/overlay2/06b92a0bfc3b86a34c02a0804b3e9a8207495e427e80035a129d2723c53d8d1b/diff:/var/lib/docker/overlay2/d8d9ba7fa47e95fbd2f54d34a9b6e8ece23c9e8eace60db8b58fc0be5c26d636/diff:/var/lib/docker/overlay2/159ebede152b09ec009388f04c8a1c4de21a7a7fa2aa9fe6523d5b3315a92845/diff:/var/lib/docker/overlay2/bcff7653e31e3c2cac4089121df64a77dc7ea9ba07014bb1c31ff3c57e7bf451/diff:/var/lib/docker/overlay2/d9ee1168f136d73c33bb4be8693edc2209502fbd780d19889f0f6cdce0455a19/diff:/var/lib/docker/overlay2/e736f199f12e56479fe60e98c4b4664aa92328b3c043cdbcdc5205517235c556/diff:/var/lib/docker/overlay2/f49379f2ea1afdfc892392fe125b09257d73b0b79d096cf666bf2580a6f8c38d/diff:/var/lib/docker/overlay2/a462aa77fc2023ad0ea5dc0e0064ec81c01d4d8634b3333e31e398a68c9cd9bb/diff:/var/lib/docker/overlay2/d4330e13481e9b44b9e628767e4fe6c5b444756001258ceae3474a96880f8d76/diff:/var/lib/docker/overlay2/15f33155bf501a79564475999230cac31c94fff30fa04b5832920c4f52cba940/diff:/var/lib/docker/overlay2/7d0ac7edcb7524a3de05a969fdc2df9dcf8e6da9e424587d07b901260f48b69d/diff", 
+                "MergedDir": "/var/lib/docker/overlay2/fe8a46aa170b5187594c64f0b47fe27a674c737178855b634173ad1fcd62a21a/merged", 
+                "UpperDir": "/var/lib/docker/overlay2/fe8a46aa170b5187594c64f0b47fe27a674c737178855b634173ad1fcd62a21a/diff", 
+                "WorkDir": "/var/lib/docker/overlay2/fe8a46aa170b5187594c64f0b47fe27a674c737178855b634173ad1fcd62a21a/work"
             }, 
             "Name": "overlay2"
         }, 
         "HostConfig": {
             "AutoRemove": false, 
             "Binds": [
-                "/home/ubuntu:/var/jenkins_home:rw"
+                "/home/ubuntu/jenkins:/var/jenkins_home:rw"
             ], 
             "BlkioDeviceReadBps": null, 
             "BlkioDeviceReadIOps": null, 
@@ -1028,11 +1027,11 @@
             "VolumeDriver": "", 
             "VolumesFrom": null
         }, 
-        "HostnamePath": "/var/lib/docker/containers/bff53803bea1e45c63225cf398e897fc66af7aeb4cbf5a86ffaf35f8882d1b18/hostname", 
-        "HostsPath": "/var/lib/docker/containers/bff53803bea1e45c63225cf398e897fc66af7aeb4cbf5a86ffaf35f8882d1b18/hosts", 
-        "Id": "bff53803bea1e45c63225cf398e897fc66af7aeb4cbf5a86ffaf35f8882d1b18", 
-        "Image": "sha256:cd14cecfdb3a657ba7d05bea026e7ac8b9abafc6e5c66253ab327c7211fa6281", 
-        "LogPath": "/var/lib/docker/containers/bff53803bea1e45c63225cf398e897fc66af7aeb4cbf5a86ffaf35f8882d1b18/bff53803bea1e45c63225cf398e897fc66af7aeb4cbf5a86ffaf35f8882d1b18-json.log", 
+        "HostnamePath": "/var/lib/docker/containers/65ec3c7c7fb2092c9bf54018391ca25792e54746ae99628f1dcc31b72c601b65/hostname", 
+        "HostsPath": "/var/lib/docker/containers/65ec3c7c7fb2092c9bf54018391ca25792e54746ae99628f1dcc31b72c601b65/hosts", 
+        "Id": "65ec3c7c7fb2092c9bf54018391ca25792e54746ae99628f1dcc31b72c601b65", 
+        "Image": "sha256:224eb89e812c4a45fc82da40ab9566a422251b61cf320a72838be560919526f5", 
+        "LogPath": "/var/lib/docker/containers/65ec3c7c7fb2092c9bf54018391ca25792e54746ae99628f1dcc31b72c601b65/65ec3c7c7fb2092c9bf54018391ca25792e54746ae99628f1dcc31b72c601b65-json.log", 
         "MountLabel": "", 
         "Mounts": [
             {
@@ -1040,14 +1039,14 @@
                 "Mode": "rw", 
                 "Propagation": "rprivate", 
                 "RW": true, 
-                "Source": "/home/ubuntu", 
+                "Source": "/home/ubuntu/jenkins", 
                 "Type": "bind"
             }
         ], 
         "Name": "/jenkins", 
         "NetworkSettings": {
             "Bridge": "", 
-            "EndpointID": "69469d57753bf665124659ffcee49a75107ca8acbae01379ab16d760bbc23954", 
+            "EndpointID": "7fb5e2c6643e4663e95f71a9c1a8130bbc1c63c7456a4a7559d29400eb032d59", 
             "Gateway": "172.17.0.1", 
             "GlobalIPv6Address": "", 
             "GlobalIPv6PrefixLen": 0, 
@@ -1062,7 +1061,7 @@
                 "bridge": {
                     "Aliases": null, 
                     "DriverOpts": null, 
-                    "EndpointID": "69469d57753bf665124659ffcee49a75107ca8acbae01379ab16d760bbc23954", 
+                    "EndpointID": "7fb5e2c6643e4663e95f71a9c1a8130bbc1c63c7456a4a7559d29400eb032d59", 
                     "Gateway": "172.17.0.1", 
                     "GlobalIPv6Address": "", 
                     "GlobalIPv6PrefixLen": 0, 
@@ -1084,27 +1083,27 @@
                     }
                 ]
             }, 
-            "SandboxID": "840e3fc43feb1c669aa3289b046f33bde8896dac5662a8a3fa7ad5fa004cd228", 
-            "SandboxKey": "/var/run/docker/netns/840e3fc43feb", 
+            "SandboxID": "c03094696630df46c26e9ac828db3a020f1efa4248815f96f6b3253fe779882e", 
+            "SandboxKey": "/var/run/docker/netns/c03094696630", 
             "SecondaryIPAddresses": null, 
             "SecondaryIPv6Addresses": null
         }, 
-        "Path": "/bin/tini", 
+        "Path": "/sbin/tini", 
         "Platform": "linux", 
         "ProcessLabel": "", 
-        "ResolvConfPath": "/var/lib/docker/containers/bff53803bea1e45c63225cf398e897fc66af7aeb4cbf5a86ffaf35f8882d1b18/resolv.conf", 
+        "ResolvConfPath": "/var/lib/docker/containers/65ec3c7c7fb2092c9bf54018391ca25792e54746ae99628f1dcc31b72c601b65/resolv.conf", 
         "RestartCount": 0, 
         "State": {
             "Dead": false, 
             "Error": "", 
             "ExitCode": 0, 
-            "FinishedAt": "0001-01-01T00:00:00Z", 
+            "FinishedAt": "2019-08-02T21:33:29.974202015Z", 
             "OOMKilled": false, 
             "Paused": false, 
-            "Pid": 21126, 
+            "Pid": 26537, 
             "Restarting": false, 
             "Running": true, 
-            "StartedAt": "2019-08-02T11:49:35.259665344Z", 
+            "StartedAt": "2019-08-02T21:48:10.837532652Z", 
             "Status": "running"
         }
     }, 
