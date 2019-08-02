@@ -1,0 +1,10 @@
+---
+
+- name: Create an Jenkins Docker container
+  docker_container:
+    name: "{{ docker_container_name }}"
+    image: "{{ docker_image }}"
+    published_ports: "{{ docker_pub_ports }}"
+    volumes: 
+      - /home/ubuntu:/var/jenkins_home
+    pull: yes

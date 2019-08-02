@@ -7,9 +7,10 @@ home_dir: ~/{{ user }}/data/
 docker_version: 18.06.3~ce~3-0~ubuntu
 # docker_version: 17.12.1~ce-0~ubuntu
 docker_repo: deb [arch=amd64] https://download.docker.com/linux/ubuntu {{ ansible_lsb.codename }} stable
+
 docker_container_name: nginx_test
 docker_image: mpereverov/nginx_sample:latest
-docker_pub_ports: 8080:80
+docker_pub_ports: 8081:80
 
 db_repo: deb http://apt.postgresql.org/pub/repos/apt/ {{ ansible_lsb.codename }}-pgdg main
 postgres_key_url: https://www.postgresql.org/media/keys/ACCC4CF8.asc

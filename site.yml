@@ -17,3 +17,9 @@
 
   roles: 
     - docker
+
+- name: run Jenkins container
+  hosts: db-server
+
+  roles:
+    - jenkins
