@@ -1,9 +1,9 @@
 pipeline {
-	agent { docker {image 'jenkins/jenkins'} }
+	agent { docker {image 'php'} }
 	stages {
 		stage ('build') {
 			steps {
-				sh 'jenkins --version'
+				sh 'php --version'
 			}
 		}
 	}
