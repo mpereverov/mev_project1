@@ -67,6 +67,10 @@
 - name: Create an nginx Docker container
   docker_container:
     name: "{{ docker_container_name }}"
+    # networks:
+    #   - name: "{{ docker_network_name }}"
+    #     aliases: nginx
     image: "{{ docker_image }}"
     published_ports: "{{ docker_pub_ports }}"
     pull: yes
+    recreate: yes
