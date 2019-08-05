@@ -1,29 +1,11 @@
 ---
 
-# - name: Get docker.sock group ID
-#   command: stat -c '%g' /var/run/docker.sock
-#   register: docker_sock_id
-
 - name: Create an Jenkins Docker container
   docker_container:
     name: "{{ docker_container_name }}"
-    # netwworks:
-    #   - name: "{{ docker_network_name }}"
-    #     aliases: jenkins
     image: "{{ docker_image }}"
     published_ports: "{{ docker_pub_ports }}"
     volumes: 
       - /home/{{ ansible_env.SUDO_USER }}/jenkins:/var/jenkins_home
-      # - /var/run/docker.sock:/var/run/docker.sock
       # - /home/{{ lookup('env','USER') }}:/var/jenkins_home
-    # links: nginx_test:nginx
-    # groups: 
-    #   - "{{ docker_sock_id.stdout }}"
     pull: yes
-    recreate: yes
-
-# - name: Download jenkins
-#   get_url:
-#     url: http://mirrors.jenkins.io/war-stable/latest/jenkins.war
-#     dest: /tmp
-
