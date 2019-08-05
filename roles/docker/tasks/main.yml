@@ -55,7 +55,7 @@
     # - docker-ce-cli 
     # - containerd.io
   # register: docker
-  # update_cache: yes
+  update_cache: yes
 
 
 # - name: Add current user to docker group
