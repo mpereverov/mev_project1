@@ -30,7 +30,6 @@
     # - gnupg-curl
     - libseccomp2
 
-
 - name: Add a Docker GPG key
   apt_key:
     keyserver: https://download.docker.com/linux/ubuntu/gpg
@@ -56,7 +55,6 @@
     # - containerd.io
   # register: docker
   update_cache: yes
-
 
 # - name: Add current user to docker group
 #   user:
